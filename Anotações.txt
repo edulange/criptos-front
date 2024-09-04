@@ -1,0 +1,7 @@
+Recapitulando, como eu faço para adicionar esse projeto ao git?
+
+1. Preciso adicionar um repositório local.
+    git init
+        (ele vai criar um .git dentro do local)
+
+posso dar um 'git status' para saber o que está para ser lançado.
