@@ -1,0 +1,37 @@
+/src
+│
+├── /assets
+│   ├── /images
+│   └── /styles
+│
+├── /components
+│   ├── /Authentication
+│   │   ├── Login.jsx
+│   │   └── Register.jsx
+│   ├── /Dashboard
+│   │   ├── Dashboard.jsx
+│   │   ├── CurrencyList.jsx
+│   │   └── CurrencyItem.jsx
+│   ├── /CurrencyDetails
+│   │   ├── CurrencyDetails.jsx
+│   │   └── PurchaseHistory.jsx
+│   └── /Common
+│       ├── Header.jsx
+│       ├── Footer.jsx
+│       └── Modal.jsx
+│
+├── /contexts
+│   └── AuthContext.jsx
+│
+├── /hooks
+│   └── useFetch.jsx
+│
+├── /services
+│   └── api.js
+│
+├── /utils
+│   └── helpers.js
+│
+├── App.jsx
+├── index.jsx
+└── routes.jsx

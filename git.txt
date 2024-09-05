@@ -3,5 +3,11 @@ Recapitulando, como eu faço para adicionar esse projeto ao git?
 1. Preciso adicionar um repositório local.
     git init
         (ele vai criar um .git dentro do local)
-
 posso dar um 'git status' para saber o que está para ser lançado.
+
+2. git add .
+3. git commit -m 'mensagem'
+4. criar o repositório no github
+    pegar o SSH
+5. git remote add origin git@github.com:edulange/criptos-front.git
+6. git push -u origin main

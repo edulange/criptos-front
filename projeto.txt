@@ -1,0 +1,25 @@
+Objetivo final do projeto?
+Concentrar os meus investimentos em um lugar, na qual eu consiga visualizar quanto eu investi e quanto eu tenho.
+
+
+Projeto
+
+DASHBOARD - Moeda - valor atual (API) - Quanto eu tenho da moeda - valor total em R$ - preço médio
+LOGIN - 
+HISTORICO DE COMPRA - 
+
+Justificativa
+Componentização Granular: Cada funcionalidade (como autenticação, dashboard, detalhes da moeda) é dividida em componentes específicos. Isso facilita a reutilização e manutenção.
+
+Separação de Responsabilidades:
+
+/assets: Armazena recursos estáticos como imagens e estilos.
+/components: Contém todos os componentes React, organizados por funcionalidades ou seções da aplicação.
+/contexts: Gerencia o estado global, como autenticação, usando Context API.
+/hooks: Guarda hooks personalizados para lógica reutilizável.
+/services: Centraliza chamadas à API, facilitando modificações futuras.
+/utils: Funções auxiliares que podem ser usadas em diferentes partes do projeto.
+Escalabilidade: À medida que o projeto cresce, novos componentes podem ser adicionados de forma organizada sem causar desordem.
+
+Clareza e Manutenção: A estrutura facilita para novos desenvolvedores entenderem rapidamente a organização do projeto e onde encontrar ou adicionar funcionalidades específicas.
+
