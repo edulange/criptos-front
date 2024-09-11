@@ -23,3 +23,88 @@ Escalabilidade: À medida que o projeto cresce, novos componentes podem ser adic
 
 Clareza e Manutenção: A estrutura facilita para novos desenvolvedores entenderem rapidamente a organização do projeto e onde encontrar ou adicionar funcionalidades específicas.
 
+Pela descrição, a estrutura que você está pensando parece boa para uma aplicação simples e funcional. Aqui estão algumas dicas para estruturar a aplicação da melhor forma:
+
+### Componentes:
+1. **Login**:  
+   - **Objetivo**: Autenticação do usuário.
+   - **Funcionalidade**: Pode ser um componente simples que verifica as credenciais e, ao logar, armazena o token do usuário no `useContext` ou `localStorage`/`sessionStorage`. 
+   - **Rota**: `/login`
+
+2. **Dashboard**:  
+   - **Objetivo**: Exibir um resumo das suas criptomoedas.
+   - **Funcionalidade**:
+     - Você pode listar as moedas que possui, com informações como preço atual, quantidade, valor total, preço médio de compra.
+     - Use o `useContext` para armazenar e compartilhar os dados do usuário logado e das criptomoedas.
+     - Faça uma chamada à API (backend) para buscar as informações de cada moeda e exibir os dados atualizados.
+   - **Rota**: `/dashboard`
+   - **Componentização interna**: 
+     - Um componente para o **resumo de cada moeda**.
+     - Um **componente pai** que faz o fetch das informações.
+
+3. **Histórico**:  
+   - **Objetivo**: Exibir todas as transações de compra/venda que você fez.
+   - **Funcionalidade**:
+     - Lista detalhada com informações sobre cada transação (data, quantidade comprada/vendida, valor de compra, etc.).
+     - Isso alimenta o Dashboard (especialmente o cálculo do preço médio, quantidade total de moedas, etc.).
+   - **Rota**: `/historico`
+
+### Estado Global com `useContext`:
+   - Crie um contexto para o **usuário** e para os **dados das criptomoedas**.
+   - Armazene no contexto informações essenciais como o token do usuário e o estado geral das criptos.
+   - Um exemplo básico de `useContext`:
+
+```javascript
+const UserContext = React.createContext();
+const CryptoContext = React.createContext();
+
+function App() {
+  const [user, setUser] = useState(null); // Informações do usuário
+  const [cryptos, setCryptos] = useState([]); // Dados das criptomoedas
+  
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      <CryptoContext.Provider value={{ cryptos, setCryptos }}>
+        {/* Suas rotas e componentes */}
+      </CryptoContext.Provider>
+    </UserContext.Provider>
+  );
+}
+```
+
+### Estrutura de Dados:
+   - **Usuário**: armazenar as informações do usuário (id, nome, token).
+   - **Criptomoedas**: manter um array de objetos de criptos, como:
+
+```json
+[
+  {
+    "id": "bitcoin",
+    "nome": "Bitcoin",
+    "quantidade": 1.5,
+    "precoMedio": 30000,
+    "precoAtual": 40000
+  },
+  {
+    "id": "ethereum",
+    "nome": "Ethereum",
+    "quantidade": 10,
+    "precoMedio": 2000,
+    "precoAtual": 3500
+  }
+]
+```
+
+### Back-end:
+   - No seu back-end (Node.js com Express), você vai precisar de uma rota para **login** e rotas para buscar as **criptomoedas** e o **histórico** de transações. Por exemplo:
+     - `GET /api/cryptos` para buscar as criptos.
+     - `GET /api/historico` para obter o histórico de compras/vendas.
+
+
+Exatamente! O **Histórico** vai obter as informações do seu banco de dados (MongoDB) e compartilhar esses dados com o **Dashboard** através do `useContext`. O fluxo seria o seguinte:
+
+1. **Histórico** faz uma requisição ao seu backend para buscar os dados de compras do MongoDB.
+2. Os dados retornados do banco são armazenados em um **estado global** usando `useContext`.
+3. O **Dashboard** acessa esses dados do `useContext` e exibe as informações de forma agregada (como quantidade total de criptomoedas, preço médio, etc.).
+
+Essa abordagem permite que os dados fiquem disponíveis para diferentes partes da aplicação de maneira eficiente, e o **Dashboard** sempre terá acesso às informações atualizadas que o **Histórico** busca.

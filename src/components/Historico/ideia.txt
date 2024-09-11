@@ -1,0 +1,17 @@
+como é a ideia do meu historico?
+
+seria bacana haver os ícone das criptos e que elas se destacassem;
+ao ser selecionado para visualizar a cripto, ela aumentaria o tamanho
+e embaixo ela traria o historico da compra;
+
+
+
+e o que deve constar no historico?
+Vai estar zoomizada a imagem, estilo como que funciona no macOS
+
+data de compra - quantidade - cotação em BRL - valor gasto em R$ - 
+
+
+
+funcionalidades, ao clicar ser possível editar, através de um modal?
+

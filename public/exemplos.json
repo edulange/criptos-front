@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "moeda": "Bitcoin",
+      "sigla": "BTC",
+      "quantidade": 0.5,
+      "preco": 350000,
+      "data": "2024-01-01",
+      "icone": "https://example.com/icons/bitcoin.png"
+    },
+    {
+      "id": 2,
+      "moeda": "Bitcoin",
+      "sigla": "BTC",
+      "quantidade": 0.3,
+      "preco": 320000,
+      "data": "2024-05-01",
+      "icone": "https://example.com/icons/bitcoin.png"
+    },
+    {
+      "id": 3,
+      "moeda": "Ethereum",
+      "sigla": "ETH",
+      "quantidade": 2.0,
+      "preco": 2000,
+      "data": "2024-02-15",
+      "icone": "https://example.com/icons/ethereum.png"
+    },
+    {
+      "id": 4,
+      "moeda": "Cardano",
+      "sigla": "ADA",
+      "quantidade": 1000,
+      "preco": 1.2,
+      "data": "2024-03-20",
+      "icone": "https://example.com/icons/cardano.png"
+    }
+  ]
+  
