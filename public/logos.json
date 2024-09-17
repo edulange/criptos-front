@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "sigla": "BTC",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg"
+    },
+    {
+        "id": 2,
+        "sigla": "ADA",
+        "url": "https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/cardano_ada-512.png"
+    },
+    {
+        "id": 3,
+        "sigla": "SOL",
+        "url": "https://cryptologos.cc/logos/solana-sol-logo.png?v=035"
+    },
+    {
+        "id": 4,
+        "sigla": "ETH",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg"
+    }
+]

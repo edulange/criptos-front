@@ -1,0 +1,8 @@
+.logos {
+    list-style: none;
+}
+
+.logos img {
+    height: 64px;
+    width: 64px;
+}
