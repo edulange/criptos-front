@@ -66,8 +66,8 @@ const Historico = () => {
             <h2>Histórico de Compras</h2>
 
             <h3>MOEDAS</h3>
-            <div>
-                <ul>
+            <div >
+                <ul className='logos-wrapper'>
                     {logos.map((logo, index) => (
                         <li key={index} className='logos'>
                             <img src={logo.url} alt="" srcset="" />
