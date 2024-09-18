@@ -1,8 +1,5 @@
 como é a ideia do meu historico?
 
-seria bacana haver os ícone das criptos e que elas se destacassem;
-ao ser selecionado para visualizar a cripto, ela aumentaria o tamanho
-e embaixo ela traria o historico da compra;
 
 
 
@@ -15,3 +12,14 @@ data de compra - quantidade - cotação em BRL - valor gasto em R$ -
 
 funcionalidades, ao clicar ser possível editar, através de um modal?
 
+ícones aparecem em sequencia
+    Funcionalidade
+        onclick filtrar as compras de somente a cripto que tu escolheu
+        onclick novamente (tranformando o estado em false) retornar para o historico geral
+
+    Estilização:
+    onmouse hover se destacar pouco, estilo macOS
+    quando selecionado deve aumentar mais ainda.
+
+ao ser selecionado para visualizar a cripto, ela aumentaria o tamanho
+e embaixo ela traria o historico da compra;
