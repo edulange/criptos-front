@@ -38,5 +38,25 @@
 		"data": "2024-03-20",
 		"icone": "https://example.com/icons/cardano.png",
 		"user": "edulange"
+	},
+	{
+		"id": 5,
+		"moeda": "Solana",
+		"sigla": "SOL",
+		"quantidade": 4,
+		"preco": 770.00,
+		"data": "2024-03-20",
+		"icone": "https://example.com/icons/cardano.png",
+		"user": "edulange"
+	},
+	{
+		"id": 6,
+		"moeda": "Solana",
+		"sigla": "SOL",
+		"quantidade": 2,
+		"preco": 500.00,
+		"data": "2024-03-20",
+		"icone": "https://example.com/icons/cardano.png",
+		"user": "edulange"
 	}
 ]

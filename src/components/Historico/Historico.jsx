@@ -4,6 +4,7 @@ import './Historico.css'
 const Historico = () => {
 	const [historico, setHistorico] = useState([])
 	const [logos, setLogos] = useState([])
+	const [filteredLogos, setFilteredLogos] = useState([])
 	const [loading, setLoading] = useState(true) // Para indicar o estado de carregamento
 	const [error, setError] = useState(null) // Para armazenar erros, se houver
 
@@ -58,19 +59,14 @@ const Historico = () => {
 
 
     const handleFocus = ( logoClicked ) => {
-        console.log(logoClicked) //funcionou passou a sigla
-        console.log(historico) //é um array de objetos
   
-    
         function filtrarPorSilga(elemento) {
             return elemento.sigla === logoClicked
         }
-        const result = historico.filter(filtrarPorSilga)
-        setHistorico(result)
-
-
-        //aqui eu criei um problema, eu estou manipulando DIRETAMENTE o estado do historico.
-        //ler novamente ultimo chatgpt pra entender melhor.
+        const siglaClicada = historico.filter(filtrarPorSilga) //sigla da cripto clicada
+		setFilteredLogos(siglaClicada) //Declara o estado dos logos que o usuario on possui.
+		console.log(filteredLogos)
+		
     }
 
 	return (
