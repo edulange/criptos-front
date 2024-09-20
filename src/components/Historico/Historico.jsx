@@ -21,7 +21,7 @@ const Historico = () => {
 			})
 			.then((data) => {
 				const historicoFiltrado = data.filter((item) => item.user === userOnline)
-				setHistorico(historicoFiltrado)  //altera o estado do histórico para o array filtrado com os usuários online
+				setHistorico(historicoFiltrado) //altera o estado do histórico para o array filtrado com os usuários online
 				setLoading(false) // Concluiu o carregamento
 			})
 			.catch((error) => {
@@ -56,15 +56,19 @@ const Historico = () => {
 		return <p>Erro: {error}</p>
 	}
 
+	// Função para filtrar o histórico com base no Logo clicado
 	const handleFocusLogo = (logoClicked) => {
-		function filtrarPorSilga(logo) {
-			return logo.sigla === logoClicked
+		const siglaClicada = historico.filter((item) => item.sigla === logoClicked) // Filtra pelo histórico da logo.sigla clicada
+		
+		if (filteredLogos.length > 0) {  //se o filteredLogo.lenght > 0 (ou seja, já foi clicado)
+			setFilteredLogos([]) //retornar como filteredLogo = vazio, fazendo com que seja renderizado o historico.
+		} else {
+			setFilteredLogos(siglaClicada) // Atualiza o estado com os itens filtrados
 		}
-
-		const siglaClicada = historico.filter(filtrarPorSilga) //sigla da cripto clicada
-		setFilteredLogos(siglaClicada) //Declara o estado dos logos que o usuario on possui.
-		console.log(filteredLogos)
 	}
+
+	// Define qual histórico será mostrado (todo ou filtrado)
+	const historicoParaMostrar = filteredLogos.length > 0 ? filteredLogos : historico
 
 	return (
 		<div>
@@ -80,8 +84,10 @@ const Historico = () => {
 					))}
 				</ul>
 			</div>
+
+			<h3>Compras</h3>
 			<ul>
-				{historico.map((item, index) => (
+				{historicoParaMostrar.map((item, index) => (
 					<li key={index}>
 						<p>
 							{item.moeda} - {item.sigla} - {item.data} - {item.quantidade} - {item.preco}
