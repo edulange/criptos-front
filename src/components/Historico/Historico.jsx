@@ -21,12 +21,12 @@ const Historico = () => {
 			})
 			.then((data) => {
 				const historicoFiltrado = data.filter((item) => item.user === userOnline)
-				setHistorico(historicoFiltrado)
+				setHistorico(historicoFiltrado)  //altera o estado do histórico para o array filtrado com os usuários online
 				setLoading(false) // Concluiu o carregamento
 			})
 			.catch((error) => {
-				setError(error.message)
-				setLoading(false)
+				setError(error.message) //retorna mensagem de erro
+				setLoading(false) // Concluiu o carregamento
 			})
 	}, [])
 
@@ -56,18 +56,15 @@ const Historico = () => {
 		return <p>Erro: {error}</p>
 	}
 
+	const handleFocusLogo = (logoClicked) => {
+		function filtrarPorSilga(logo) {
+			return logo.sigla === logoClicked
+		}
 
-
-    const handleFocus = ( logoClicked ) => {
-  
-        function filtrarPorSilga(elemento) {
-            return elemento.sigla === logoClicked
-        }
-        const siglaClicada = historico.filter(filtrarPorSilga) //sigla da cripto clicada
+		const siglaClicada = historico.filter(filtrarPorSilga) //sigla da cripto clicada
 		setFilteredLogos(siglaClicada) //Declara o estado dos logos que o usuario on possui.
 		console.log(filteredLogos)
-		
-    }
+	}
 
 	return (
 		<div>
@@ -77,7 +74,7 @@ const Historico = () => {
 			<div>
 				<ul className='logos-wrapper'>
 					{logos.map((logo, index) => (
-						<li key={index} className='logos' onClick={() => handleFocus(logo.sigla)}>
+						<li key={index} className='logos' onClick={() => handleFocusLogo(logo.sigla)}>
 							<img src={logo.url} alt={logo.sigla} />
 						</li>
 					))}
@@ -86,7 +83,6 @@ const Historico = () => {
 			<ul>
 				{historico.map((item, index) => (
 					<li key={index}>
-						{/* Exemplo de renderização de dados do histórico */}
 						<p>
 							{item.moeda} - {item.sigla} - {item.data} - {item.quantidade} - {item.preco}
 						</p>
