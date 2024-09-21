@@ -23,3 +23,9 @@ funcionalidades, ao clicar ser possível editar, através de um modal?
 
 ao ser selecionado para visualizar a cripto, ela aumentaria o tamanho
 e embaixo ela traria o historico da compra;
+
+o que eu preciso fazer agora?
+
+ao clicar em um item da compra,
+abre um modal que no modal
+da para editar 

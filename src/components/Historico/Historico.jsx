@@ -70,6 +70,10 @@ const Historico = () => {
 	// Define qual histórico será mostrado (todo ou filtrado)
 	const historicoParaMostrar = filteredLogos.length > 0 ? filteredLogos : historico
 
+	const handleEditModal = ( {moeda, sigla, quantidade, preco, data} ) => {
+		console.log(moeda, sigla, quantidade, preco, data)
+	}
+
 	return (
 		<div>
 			<h2>Histórico de Compras</h2>
@@ -88,7 +92,7 @@ const Historico = () => {
 			<h3>Compras</h3>
 			<ul>
 				{historicoParaMostrar.map((item, index) => (
-					<li key={index}>
+					<li key={index} onClick={() => handleEditModal(item)}>
 						<p>
 							{item.moeda} - {item.sigla} - {item.data} - {item.quantidade} - {item.preco}
 						</p>
