@@ -2,13 +2,17 @@ import { useState, useEffect } from 'react'
 import './Historico.css'
 
 const Historico = () => {
-	const [historico, setHistorico] = useState([])
-	const [logos, setLogos] = useState([])
-	const [filteredLogos, setFilteredLogos] = useState([])
+	const [historico, setHistorico] = useState([]) //para armazenar o estado do histórico
+	const [logos, setLogos] = useState([])  //para armazenar o estado dos logos
+	const [filteredLogos, setFilteredLogos] = useState([]) //Para armazenar o estado dos logos filtrados
 	const [loading, setLoading] = useState(true) // Para indicar o estado de carregamento
 	const [error, setError] = useState(null) // Para armazenar erros, se houver
+	const [compraSelecionadaModal, setCompraSelecionadaModal] = useState(false)
+	const [compraSelecionada, setCompraSelecioanda] = useState({})
+	const [compraSelecionadaEdit, setCompraSelecionadaEdit] = useState('')
 
-	const userOnline = 'edulange'
+
+	const userOnline = 'edulange'  //para simular um usuário
 
 	useEffect(() => {
 		// Simulando o fetch dos dados do arquivo JSON
@@ -30,7 +34,7 @@ const Historico = () => {
 			})
 	}, [])
 
-	useEffect(() => {
+	useEffect(() => {  //simulando o fetch dos logos
 		fetch('/logos.json')
 			.then((response) => {
 				if (!response.ok) {
@@ -70,8 +74,20 @@ const Historico = () => {
 	// Define qual histórico será mostrado (todo ou filtrado)
 	const historicoParaMostrar = filteredLogos.length > 0 ? filteredLogos : historico
 
-	const handleEditModal = ( {moeda, sigla, quantidade, preco, data} ) => {
-		console.log(moeda, sigla, quantidade, preco, data)
+	const handleEditModal = ( item ) => {
+		setCompraSelecionadaModal(!compraSelecionadaModal) //altera o estado do CompraModal
+		setCompraSelecioanda(item)
+		console.log(compraSelecionada)
+	}
+
+	const handleEdit = (e) => {
+		//aqui eu encontrei um problema.
+		const { name, value } = e.target
+		console.log(value)
+		setCompraSelecionadaEdit({
+			...compraSelecionada,
+			[name]: value
+		})
 	}
 
 	return (
@@ -90,6 +106,18 @@ const Historico = () => {
 			</div>
 
 			<h3>Compras</h3>
+			<div>
+				{compraSelecionadaModal && (  //se compraselecionada &&(AND) renderiza o restante
+					<div className='modal'>
+						 //depois fazer um map disso com Object.Keys()
+						<input type="text" name='moeda' value={compraSelecionada.moeda} onChange={handleEdit}/>
+						<input type="text" name='sigla' value={compraSelecionada.sigla} onChange={handleEdit}/>
+						<input type="text" name='data' value={compraSelecionada.data} onChange={handleEdit}/>
+						<input type="number" name='quantidade' value={compraSelecionada.quantidade} onChange={handleEdit}/>
+						<input type="number" name='preco' value={compraSelecionada.preco} onChange={handleEdit}/>
+					</div>
+				)}
+			</div>
 			<ul>
 				{historicoParaMostrar.map((item, index) => (
 					<li key={index} onClick={() => handleEditModal(item)}>
