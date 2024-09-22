@@ -7,8 +7,8 @@ const Historico = () => {
 	const [filteredLogos, setFilteredLogos] = useState([]) //Para armazenar o estado dos logos filtrados
 	const [loading, setLoading] = useState(true) // Para indicar o estado de carregamento
 	const [error, setError] = useState(null) // Para armazenar erros, se houver
-	const [compraSelecionadaModal, setCompraSelecionadaModal] = useState(false)
-	const [compraSelecionada, setCompraSelecionada] = useState({})
+	const [compraSelecionadaModal, setCompraSelecionadaModal] = useState(false) //controla se o modal aparece ou não
+	const [compraSelecionada, setCompraSelecionada] = useState({}) //o estado da compra selecioanda
 
 	const userOnline = 'edulange' //para simular um usuário
 
@@ -88,6 +88,10 @@ const Historico = () => {
 		}))
 	}
 
+	const handleSubmit = () => {   //enviando para salvar a edição
+		console.log(compraSelecionada)
+	}
+
 	return (
 		<div>
 			<h2>Histórico de Compras</h2>
@@ -133,6 +137,8 @@ const Historico = () => {
 							value={compraSelecionada.preco}
 							onChange={handleEdit}
 						/>
+						<button onClick={handleSubmit}>Salvar</button>
+						<button onClick={() => setCompraSelecionadaModal(false)}>Cancelar</button>
 					</div>
 				)}
 			</div>
