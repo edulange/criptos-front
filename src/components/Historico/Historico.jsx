@@ -36,9 +36,7 @@ const Historico = () => {
 	if (loading) return <div>Carregando...</div>
 	if (error) return <div>Erro: {error}</div>
 
-
-
-// ----------------------------------- terei que migrar issso aqui para o LOGOS, no entanto, o historico ainda não está no dashboard
+	// ----------------------------------- terei que migrar issso aqui para o LOGOS, no entanto, o historico ainda não está no dashboard
 
 	// Função para filtrar o histórico com base no Logo clicado
 	const handleFocusLogo = (logoClicked) => {
@@ -55,8 +53,7 @@ const Historico = () => {
 	// Define qual histórico será mostrado (todo ou filtrado)
 	const historicoParaMostrar = filteredLogos.length > 0 ? filteredLogos : historico
 
-
-// ------------------------------------ terei que migrar issso aqui para o LOGOS, no entanto, o historico ainda não está no dashboard
+	// ------------------------------------ terei que migrar issso aqui para o LOGOS, no entanto, o historico ainda não está no dashboard
 
 	const handleEditModal = (item) => {
 		setCompraSelecionadaModal(!compraSelecionadaModal) //altera o estado do CompraModal
@@ -83,17 +80,6 @@ const Historico = () => {
 			<h2>Histórico de Compras</h2>
 
 			<Logos handleFocusLogo={handleFocusLogo} />
-
-			<h3>MOEDAS</h3>
-			<div>
-				<ul className='logos-wrapper'>
-					{logos.map((logo, index) => (
-						<li key={index} className='logos' onClick={() => handleFocusLogo(logo.sigla)}>
-							<img src={logo.url} alt={logo.sigla} />
-						</li>
-					))}
-				</ul>
-			</div>
 
 			<h3>Compras</h3>
 			<div>
