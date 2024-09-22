@@ -4,8 +4,8 @@ import Dashboard from './components/Dashboard/Dashboard'
 const App = () => {
 	return (
 		<>
-			<Dashboard />
-			{/* <Historico /> */}
+			{/* <Dashboard /> */}
+			<Historico />
 		</>
 	)
 }

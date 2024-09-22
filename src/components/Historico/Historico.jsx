@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './Historico.css'
+import Logos from '../Logos/Logos'
 
 const Historico = () => {
 	const [historico, setHistorico] = useState([]) //para armazenar o estado do histórico
@@ -32,27 +33,12 @@ const Historico = () => {
 			})
 	}, [])
 
-	useEffect(() => {
-		//simulando o fetch dos logos
-		fetch('/logos.json')
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error('Erro ao buscar o logo: ' + response.statusText)
-				}
-				return response.json()
-			})
-			.then((data) => {
-				setLogos(data)
-				setLoading(false)
-			})
-			.catch((error) => {
-				setError(error.message)
-				setLoading(false)
-			})
-	}, [])
-
 	if (loading) return <div>Carregando...</div>
 	if (error) return <div>Erro: {error}</div>
+
+
+
+// ----------------------------------- terei que migrar issso aqui para o LOGOS, no entanto, o historico ainda não está no dashboard
 
 	// Função para filtrar o histórico com base no Logo clicado
 	const handleFocusLogo = (logoClicked) => {
@@ -68,6 +54,9 @@ const Historico = () => {
 
 	// Define qual histórico será mostrado (todo ou filtrado)
 	const historicoParaMostrar = filteredLogos.length > 0 ? filteredLogos : historico
+
+
+// ------------------------------------ terei que migrar issso aqui para o LOGOS, no entanto, o historico ainda não está no dashboard
 
 	const handleEditModal = (item) => {
 		setCompraSelecionadaModal(!compraSelecionadaModal) //altera o estado do CompraModal
@@ -92,6 +81,8 @@ const Historico = () => {
 	return (
 		<div>
 			<h2>Histórico de Compras</h2>
+
+			<Logos handleFocusLogo={handleFocusLogo} />
 
 			<h3>MOEDAS</h3>
 			<div>
@@ -149,11 +140,8 @@ const Historico = () => {
 				))}
 			</ul>
 
-			<div>
-				Retornar 
-			</div>
+			<div>Retornar</div>
 		</div>
-		
 	)
 }
 
