@@ -1,0 +1,13 @@
+Qual é o objetivo do dashobard?
+Trazer os logos dos usuários.
+Trazer todas as informações de compra através do usuário logado.
+
+
+DASHBOARD - Moeda - valor atual (API) - Quanto eu tenho da moeda - valor total em R$ - preço médio
+Será legal trazer em dois formatos:
+    1 - formato tabela
+    2 - formato hero
+
+
+Trazer os logos do usuario como no historico.
+

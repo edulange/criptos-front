@@ -1,0 +1,1 @@
+Comos os logos eu quero que apareçam tanto no dashboard quanto no histórico faz sentido eu ter um componente separado.

@@ -1,18 +1,3 @@
-.logos {
-    list-style: none;
-}
-
-.logos-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-}
-
-.logos img {
-    height: 64px;
-    width: 64px;
-}
 
 .modal {
     display: flex;
