@@ -1,10 +1,11 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Historico from './components/Historico/Historico'
 import Dashboard from './components/Dashboard/Dashboard'
 import { useState, useEffect } from 'react'
 
 const App = () => {
 	const [historico, setHistorico] = useState([]) //para armazenar o estado do histórico
-  const [loading, setLoading] = useState(true) // Para indicar o estado de carregamento
+	const [loading, setLoading] = useState(true) // Para indicar o estado de carregamento
 	const [error, setError] = useState(null) // Para armazenar erros, se houver
 
 	useEffect(() => {
@@ -27,11 +28,22 @@ const App = () => {
 			})
 	}, [])
 
-	return (  //agora preciso fazer as parada de router, link e path
-		<>
-			<Dashboard />
-			<Historico historico={historico}/>
-		</>
+	const userOnline = 'edulange' //para simular um usuário
+
+
+	if (loading) return <div>Carregando...</div>
+	if (error) return <div>Erro: {error}</div>
+
+
+
+	return (
+		//agora preciso fazer as parada de router, link e path
+		<Router>
+			<Routes>
+				<Route path='/' element={<Dashboard historico={historico}/>}  />
+				<Route path='/historico' element={<Historico historico={historico} />}  />
+			</Routes>
+		</Router>
 	)
 }
 

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Historico.css'
 import Logos from '../Logos/Logos'
 
 const Historico = () => {
 	const [historico, setHistorico] = useState([]) //para armazenar o estado do histórico
-	const [logos, setLogos] = useState([]) //para armazenar o estado dos logos
 	const [filteredLogos, setFilteredLogos] = useState([]) //Para armazenar o estado dos logos filtrados
 	const [loading, setLoading] = useState(true) // Para indicar o estado de carregamento
 	const [error, setError] = useState(null) // Para armazenar erros, se houver
@@ -12,6 +12,8 @@ const Historico = () => {
 	const [compraSelecionada, setCompraSelecionada] = useState({}) //o estado da compra selecioanda
 
 	const userOnline = 'edulange' //para simular um usuário
+	
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		// Simulando o fetch dos dados do arquivo JSON
@@ -126,7 +128,7 @@ const Historico = () => {
 				))}
 			</ul>
 
-			<div>Retornar</div>
+			<button onClick={() => navigate('/')}>Retornar</button>
 		</div>
 	)
 }
