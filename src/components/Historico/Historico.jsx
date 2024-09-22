@@ -51,13 +51,8 @@ const Historico = () => {
 			})
 	}, [])
 
-	if (loading) {
-		return <p>Carregando...</p>
-	}
-
-	if (error) {
-		return <p>Erro: {error}</p>
-	}
+	if (loading) return <div>Carregando...</div>
+	if (error) return <div>Erro: {error}</div>
 
 	// Função para filtrar o histórico com base no Logo clicado
 	const handleFocusLogo = (logoClicked) => {
@@ -81,6 +76,7 @@ const Historico = () => {
 	}
 
 	const handleEdit = (e) => {
+		// cria uma cópia do estado anterior e altera o valor novo.
 		const { name, value } = e.target
 		setCompraSelecionada((prevState) => ({
 			...prevState, // Copia os valores atuais da compra selecionada
@@ -88,7 +84,8 @@ const Historico = () => {
 		}))
 	}
 
-	const handleSubmit = () => {   //enviando para salvar a edição
+	const handleSubmit = () => {
+		//enviando para salvar a edição  //preciso fazer depois o handle
 		console.log(compraSelecionada)
 	}
 
@@ -151,7 +148,12 @@ const Historico = () => {
 					</li>
 				))}
 			</ul>
+
+			<div>
+				Retornar 
+			</div>
 		</div>
+		
 	)
 }
 
