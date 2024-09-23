@@ -1,25 +1,18 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './Historico.css'
 import Logos from '../Logos/Logos'
 import { HistoricoContext } from '../../contexts/HistoricoContext'
+import './Historico.css'
 
 const Historico = () => {
-	const { historico, loading, error, filteredLogos, setFilteredLogos } = useContext(HistoricoContext);
+	const { historico, filteredLogos } = useContext(HistoricoContext)
 	const [compraSelecionadaModal, setCompraSelecionadaModal] = useState(false) //controla se o modal aparece ou não
 	const [compraSelecionada, setCompraSelecionada] = useState({}) //o estado da compra selecioanda
 
-
 	const navigate = useNavigate()
-
-	// ----------------------------------- terei que migrar issso aqui para o LOGOS, no entanto, o historico ainda não está no dashboard
-
-
 
 	// Define qual histórico será mostrado (todo ou filtrado)
 	const historicoParaMostrar = filteredLogos.length > 0 ? filteredLogos : historico
-
-	// ------------------------------------ terei que migrar issso aqui para o LOGOS, no entanto, o historico ainda não está no dashboard
 
 	const handleEditModal = (item) => {
 		setCompraSelecionadaModal(!compraSelecionadaModal) //altera o estado do CompraModal

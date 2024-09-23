@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import Logos from '../Logos/Logos'
 import { useNavigate } from 'react-router-dom'
 import { HistoricoContext } from '../../contexts/HistoricoContext'
