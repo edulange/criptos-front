@@ -58,5 +58,15 @@
 		"data": "2024-03-20",
 		"icone": "https://example.com/icons/cardano.png",
 		"user": "edulange"
+	},
+	{
+		"id": 7,
+		"moeda": "Bitcoin",
+		"sigla": "BTC",
+		"quantidade": 3,
+		"preco": 500.00,
+		"data": "2024-03-20",
+		"icone": "https://example.com/icons/cardano.png",
+		"user": "edulange"
 	}
 ]

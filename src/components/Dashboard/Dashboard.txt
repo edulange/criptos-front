@@ -10,4 +10,4 @@ Será legal trazer em dois formatos:
 
 
 Trazer os logos do usuario como no historico.
-
+OK
