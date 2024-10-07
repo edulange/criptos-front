@@ -13,21 +13,21 @@ const Dashboard = () => {
 	//como eu faço o preço médio?
 	//eu faço o somatório de um numero / numero de vezes que fora somado
 
-	const moedasAgrupadas = historico.reduce((compras, curr) => {
-		const moedaExiste = compras.find(item => item.sigla === curr.sigla);
+	const moedasAgrupadas = historico.reduce((compras, transacaoAtual) => {
+		const moedaExiste = compras.find(item => item.sigla === transacaoAtual.sigla);
 		if (moedaExiste) {
-		  moedaExiste.quantidade += curr.quantidade;
-		  moedaExiste.totalPreco += curr.preco; // Acumula o total do preço
+		  moedaExiste.quantidade += transacaoAtual.quantidade;
+		  moedaExiste.totalPreco += transacaoAtual.preco; // Acumula o total do preço
 		  moedaExiste.compras += 1; // Conta o número de vezes que foi comprado
 		  moedaExiste.precoMedio = moedaExiste.totalPreco / moedaExiste.compras; // Calcula o preço médio
 		} else {
 		  compras.push({
-			moeda: curr.moeda,
-			sigla: curr.sigla,
-			quantidade: curr.quantidade,
-			totalPreco: curr.preco, // Inicia o total do preço
+			moeda: transacaoAtual.moeda,
+			sigla: transacaoAtual.sigla,
+			quantidade: transacaoAtual.quantidade,
+			totalPreco: transacaoAtual.preco, // Inicia o total do preço
 			compras: 1, // Inicia o contador de compras
-			precoMedio: curr.preco // Define o preço médio inicial
+			precoMedio: transacaoAtual.preco, // Define o preço médio inicial
 		  });
 		}
 		return compras;
@@ -45,7 +45,7 @@ const Dashboard = () => {
 				{moedasAgrupadas.map((compra, index) => (
 					<li key={index}>
 						<p>
-							Cripto: {compra.moeda} - Sigla: {compra.sigla} - Preço M:{compra.precoMedio} - {compra.quantidade} - {compra.preco}
+							Cripto: {compra.moeda} - Sigla: {compra.sigla} - Preço M:{compra.precoMedio} - {compra.quantidade} - Total: COTACAO x Quantidade
 						</p>
 					</li>
 				))}

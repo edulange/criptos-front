@@ -34,7 +34,7 @@
 		"moeda": "Cardano",
 		"sigla": "ADA",
 		"quantidade": 1000,
-		"preco": 1.2,
+		"preco": 5.0,
 		"data": "2024-03-20",
 		"icone": "https://example.com/icons/cardano.png",
 		"user": "edulange"
@@ -44,7 +44,7 @@
 		"moeda": "Solana",
 		"sigla": "SOL",
 		"quantidade": 4,
-		"preco": 770.00,
+		"preco": 500.00,
 		"data": "2024-03-20",
 		"icone": "https://example.com/icons/cardano.png",
 		"user": "edulange"
@@ -64,7 +64,7 @@
 		"moeda": "Bitcoin",
 		"sigla": "BTC",
 		"quantidade": 3,
-		"preco": 500.00,
+		"preco": 350000.00,
 		"data": "2024-03-20",
 		"icone": "https://example.com/icons/cardano.png",
 		"user": "edulange"

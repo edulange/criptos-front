@@ -8,6 +8,14 @@ Será legal trazer em dois formatos:
     1 - formato tabela
     2 - formato hero
 
-
 Trazer os logos do usuario como no historico.
 OK
+
+o que falta?
+
+
+Colocar um valor TOTAL
+Quanto que eu possuo
+e o percentual da minha carteira?
+
+utilizar uma API para pegar a cotação das criptos

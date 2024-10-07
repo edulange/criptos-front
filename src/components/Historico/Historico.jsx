@@ -8,6 +8,7 @@ const Historico = () => {
 	const { historico, filteredLogos } = useContext(HistoricoContext)
 	const [compraSelecionadaModal, setCompraSelecionadaModal] = useState(false) //controla se o modal aparece ou não
 	const [compraSelecionada, setCompraSelecionada] = useState({}) //o estado da compra selecioanda
+	const [adicionarCompra, setAdicionarCompra] = useState(false)
 
 	const navigate = useNavigate()
 
@@ -32,6 +33,10 @@ const Historico = () => {
 	const handleSubmit = () => {
 		//enviando para salvar a edição  //preciso fazer depois o handle
 		console.log(compraSelecionada)
+	}
+
+	const handleAdicionarCompra = () => {
+		setAdicionarCompra(true)
 	}
 
 	return (
@@ -86,6 +91,7 @@ const Historico = () => {
 			</ul>
 
 			<button onClick={() => navigate('/')}>Retornar</button>
+			<button onClick={handleAdicionarCompra}>Adicionar Compra</button>
 		</div>
 	)
 }
