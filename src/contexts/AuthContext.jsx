@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
 	//função para fazer login e logout
 	const login = () => setIsAuthenticated(true)
-	const logout = () => setIsAuthenticated(falses)
+	const logout = () => setIsAuthenticated(false)
 
     return (
         <AuthContext.Provider value={{ isAuthenticated, login, logout }}>

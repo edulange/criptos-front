@@ -1,0 +1,15 @@
+o que precia ter aqui dentro?
+
+um input para poder pesquisar a cripto, vindo da API
+    quando pesquisar filtrar pela sigla e o nome
+    cotação atual
+
+os campos para serem preenchidos
+    cripto
+    sigla
+    data de compra
+    quantidade
+    valor pago
+
+um botão para enviar para o db
+botão pare retornar.
